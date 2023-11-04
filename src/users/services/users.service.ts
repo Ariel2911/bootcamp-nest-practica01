@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import { IUser } from 'src/interfaces/user.interface';
+import { users } from 'data/data';
 
 @Injectable()
 export class UsersService {
-  getSaludo() {
-    return 'Saludo desde users';
+  getUsers(): IUser[] {
+    return users;
   }
 }
