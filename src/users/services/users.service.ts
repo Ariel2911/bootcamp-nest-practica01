@@ -12,4 +12,9 @@ export class UsersService {
     const user = users.find((user) => Number(id) === user.id);
     return user;
   }
+
+  getQuantity(): number {
+    console.log(users.length);
+    return users.length;
+  }
 }

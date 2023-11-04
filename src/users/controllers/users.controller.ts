@@ -11,6 +11,11 @@ export class UsersController {
     return this.usersService.getUsers();
   }
 
+  @Get('qty')
+  getQuantity() {
+    return this.usersService.getQuantity();
+  }
+
   @Get(':id')
   getUser(@Param('id') id: string): IUser {
     return this.usersService.getUser(id);
