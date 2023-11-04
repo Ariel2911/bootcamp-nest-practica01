@@ -7,4 +7,9 @@ export class UsersService {
   getUsers(): IUser[] {
     return users;
   }
+
+  getUser(id: string): IUser {
+    const user = users.find((user) => Number(id) === user.id);
+    return user;
+  }
 }
