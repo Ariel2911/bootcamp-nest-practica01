@@ -9,6 +9,7 @@ import {
 import { UsersService } from '../services/users.service';
 import { IUser } from 'src/interfaces/user.interface';
 import { CreateUserDto } from 'src/dto/create-user.dto';
+import { firstValueFrom } from 'rxjs';
 
 @Controller('users')
 export class UsersController {
@@ -35,5 +36,13 @@ export class UsersController {
       throw new BadRequestException('Invalid data');
     }
     return this.usersService.createUser(userData);
+  }
+
+  @Get('pokemon/:name')
+  async getPokemonByName(@Param('name') name: string) {
+    const { data } = await firstValueFrom(
+      this.usersService.getPokemonByName(name),
+    );
+    return data;
   }
 }
