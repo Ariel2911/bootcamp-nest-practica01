@@ -45,4 +45,12 @@ export class UsersController {
     );
     return data;
   }
+
+  @Get('pokemon/compare/:firstPokemon/:secondPokemon')
+  async getPokemonCompare(
+    @Param('firstPokemon') firstPokemon: string,
+    @Param('secondPokemon') secondPokemon: string,
+  ) {
+    return this.usersService.getPokemonCompare(firstPokemon, secondPokemon);
+  }
 }
