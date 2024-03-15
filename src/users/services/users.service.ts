@@ -10,8 +10,6 @@ import { CreateUserDto } from 'src/dto/create-user.dto';
 export class UsersService {
   constructor(private readonly httpService: HttpService) {}
 
-  private counter: number = users.length;
-
   getUsers(): IUser[] {
     return users;
   }
@@ -27,8 +25,9 @@ export class UsersService {
   }
 
   createUser(user: CreateUserDto) {
-    this.counter++;
-    users.push({ id: this.counter, ...user });
+    const userLenngth = users.length;
+
+    users.push({ id: users[userLenngth - 1].id + 1, ...user });
 
     return users;
   }
