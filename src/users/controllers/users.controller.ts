@@ -11,7 +11,7 @@ import { IUser } from 'src/interfaces/user.interface';
 import { CreateUserDto } from 'src/dto/create-user.dto';
 import { firstValueFrom } from 'rxjs';
 
-@Controller('users')
+@Controller('api/users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
