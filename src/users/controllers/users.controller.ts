@@ -9,7 +9,6 @@ import {
 import { UsersService } from '../services/users.service';
 import { IUser } from 'src/interfaces/user.interface';
 import { CreateUserDto } from 'src/dto/create-user.dto';
-import { firstValueFrom } from 'rxjs';
 
 @Controller('api/users')
 export class UsersController {
@@ -21,7 +20,7 @@ export class UsersController {
   }
 
   @Get('qty')
-  getQuantity() {
+  getQuantity(): number {
     return this.usersService.getQuantity();
   }
 
@@ -31,26 +30,10 @@ export class UsersController {
   }
 
   @Post()
-  createUser(@Body() userData: CreateUserDto) {
+  createUser(@Body() userData: CreateUserDto): IUser[] {
     if (!userData?.name || !userData?.surname || !userData?.age) {
       throw new BadRequestException('Invalid data');
     }
     return this.usersService.createUser(userData);
-  }
-
-  @Get('pokemon/:name')
-  async getPokemonByName(@Param('name') name: string) {
-    const { data } = await firstValueFrom(
-      this.usersService.getPokemonByName(name),
-    );
-    return data;
-  }
-
-  @Get('pokemon/compare/:firstPokemon/:secondPokemon')
-  async getPokemonCompare(
-    @Param('firstPokemon') firstPokemon: string,
-    @Param('secondPokemon') secondPokemon: string,
-  ) {
-    return this.usersService.getPokemonCompare(firstPokemon, secondPokemon);
   }
 }
