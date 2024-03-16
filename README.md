@@ -1,51 +1,107 @@
-# Practicas del bootcamp de JavaScript en el Backend realizada con Nest JS
+# Primeros pasos con Nest JS. Api para crear una lista de usuarios.
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+API de práctica desarrollada con NestJS que incluye funcionalidades básicas para interactuar con una lista de usuarios. Sus funcionalidades son:
+
+- Leer todos los usuario de la lista.
+- Leer un usuario en particular de la lista.
+- Crea usuarios nuevos y agregarlos a la lista.
 
 ## Installation
 
-```bash
-$ pnpm install
-```
+- NodeJS (v12 o superior)
+- npm(v6 o superior)
+- NestJS CLI
 
-## Running the app
+## Installation
 
-```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
-```
-
-## Test
+1. Clonar el repositorio
 
 ```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+$ git clone https://github.com/Ariel2911/19-nest-js_documentacion-y-comunicacion.git
 ```
 
-## Support
+2. Navegar al directorio
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+$ cd 19-nest-js_documentacion-y-comunicacion.git
+```
 
-## Stay in touch
+3. Instalar dependencias
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+$ npm install
+```
+
+## Ejecución
+
+```bash
+$ npm run start
+```
+
+## Punto de acceso
+
+http://localhost:3000
+
+## Uso
+
+Este servidor se comunicará a travez de datos en formato JSON
+
+### Obtener todas los usuarios
+
+```http
+  GET /api/users/
+```
+
+Respuesta:
+
+| Status | Type                                                                 | Description              |
+| :----- | :------------------------------------------------------------------- | :----------------------- |
+| `200`  | `[{"id": number, "name": string, "surname": string, "age": string}]` | Resultado de la busqueda |
+
+### Obtener un usuario
+
+```http
+  GET /api/users/${id}
+```
+
+| Parameter | Type     | Description                           |
+| :-------- | :------- | :------------------------------------ |
+| `id`      | `string` | **Required**. Id de la tarea a buscar |
+
+Respuesta:
+
+| Status | Type                                                               | Description              |
+| :----- | :----------------------------------------------------------------- | :----------------------- |
+| `200`  | `{"id": number, "name": string, "surname": string, "age": string}` | Resultado de la busqueda |
+
+### Crear un usuario
+
+```http
+  POST /api/users/
+```
+
+| Body      | Type     | Description                         |
+| :-------- | :------- | :---------------------------------- |
+| `name`    | `string` | **Required**. Valor que se almacena |
+| `surname` | `string` | **Required**. Valor que se almacena |
+| `age`     | `string` | **Required**. Valor que se almacena |
+
+Respuesta:
+
+| Status | Type                                                               | Description      |
+| :----- | :----------------------------------------------------------------- | :--------------- |
+| `201`  | `{"id": number, "name": string, "surname": string, "age": string}` | Usuario agregado |
+
+| Status | Type                     | Description               |
+| :----- | :----------------------- | :------------------------ |
+| `400`  | `"error": "Bad Request"` | "message": "Invalid data" |
 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Contacto:
+
+Email: ariel29111978@hotmail.com
