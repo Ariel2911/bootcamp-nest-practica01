@@ -8,7 +8,7 @@ API de práctica desarrollada con NestJS que incluye funcionalidades básicas pa
 - Leer un usuario en particular de la lista.
 - Crea usuarios nuevos y agregarlos a la lista.
 
-## Prerequisitos
+## Prerrequisitos
 
 - NodeJS (v12 o superior)
 - npm(v6 o superior)
@@ -46,7 +46,7 @@ http://localhost:3000
 
 ## Uso
 
-Este servidor se comunicará a travez de datos en formato JSON
+Este servidor se comunicará a través de datos en formato JSON
 
 ### Obtener una lista de usuarios
 
@@ -56,7 +56,7 @@ Este servidor se comunicará a travez de datos en formato JSON
 
 Respuesta:
 
-| Status | Type                                                                 | Description              |
+| Estado | Tipo                                                                 | Descripción              |
 | :----- | :------------------------------------------------------------------- | :----------------------- |
 | `200`  | `[{"id": number, "name": string, "surname": string, "age": string}]` | Resultado de la busqueda |
 
@@ -66,13 +66,13 @@ Respuesta:
   GET /api/users/${id}
 ```
 
-| Parameter | Type     | Description                           |
-| :-------- | :------- | :------------------------------------ |
-| `id`      | `string` | **Required**. Id de la tarea a buscar |
+| Parametros | Tipo     | Descripción                           |
+| :--------- | :------- | :------------------------------------ |
+| `id`       | `string` | **Required**. Id de la tarea a buscar |
 
 Respuesta:
 
-| Status | Type                                                               | Description              |
+| Estado | Tipo                                                               | Descripción              |
 | :----- | :----------------------------------------------------------------- | :----------------------- |
 | `200`  | `{"id": number, "name": string, "surname": string, "age": string}` | Resultado de la busqueda |
 
@@ -82,7 +82,7 @@ Respuesta:
   POST /api/users/
 ```
 
-| Body      | Type     | Description                         |
+| Body      | Tipo     | Descripción                         |
 | :-------- | :------- | :---------------------------------- |
 | `name`    | `string` | **Required**. Valor que se almacena |
 | `surname` | `string` | **Required**. Valor que se almacena |
@@ -90,11 +90,11 @@ Respuesta:
 
 Respuesta:
 
-| Status | Type                                                               | Description      |
+| Estado | Tipo                                                               | Descripción      |
 | :----- | :----------------------------------------------------------------- | :--------------- |
 | `201`  | `{"id": number, "name": string, "surname": string, "age": string}` | Usuario agregado |
 
-| Status | Type                     | Description               |
+| Estado | Tipo                     | Descripción               |
 | :----- | :----------------------- | :------------------------ |
 | `400`  | `"error": "Bad Request"` | "message": "Invalid data" |
 
