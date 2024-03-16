@@ -1,6 +1,6 @@
-# Primeros pasos con Nest JS. Api para crear una lista de usuarios.
+# Api para crear una lista de usuarios. Primeros pasos con Nest JS.
 
-## Description
+## Descripción
 
 API de práctica desarrollada con NestJS que incluye funcionalidades básicas para interactuar con una lista de usuarios. Sus funcionalidades son:
 
@@ -8,24 +8,24 @@ API de práctica desarrollada con NestJS que incluye funcionalidades básicas pa
 - Leer un usuario en particular de la lista.
 - Crea usuarios nuevos y agregarlos a la lista.
 
-## Installation
+## Prerequisitos
 
 - NodeJS (v12 o superior)
 - npm(v6 o superior)
 - NestJS CLI
 
-## Installation
+## Installación
 
 1. Clonar el repositorio
 
 ```bash
-$ git clone https://github.com/Ariel2911/19-nest-js_documentacion-y-comunicacion.git
+$ git clone https://github.com/Ariel2911/bootcamp-nest-practica01.git
 ```
 
 2. Navegar al directorio
 
 ```bash
-$ cd 19-nest-js_documentacion-y-comunicacion.git
+$ cd bootcamp-nest-practica01
 ```
 
 3. Instalar dependencias
@@ -48,7 +48,7 @@ http://localhost:3000
 
 Este servidor se comunicará a travez de datos en formato JSON
 
-### Obtener todas los usuarios
+### Obtener una lista de usuarios
 
 ```http
   GET /api/users/
@@ -60,7 +60,7 @@ Respuesta:
 | :----- | :------------------------------------------------------------------- | :----------------------- |
 | `200`  | `[{"id": number, "name": string, "surname": string, "age": string}]` | Resultado de la busqueda |
 
-### Obtener un usuario
+### Obtener un usuario específico
 
 ```http
   GET /api/users/${id}
@@ -76,7 +76,7 @@ Respuesta:
 | :----- | :----------------------------------------------------------------- | :----------------------- |
 | `200`  | `{"id": number, "name": string, "surname": string, "age": string}` | Resultado de la busqueda |
 
-### Crear un usuario
+### Añadir un usuario
 
 ```http
   POST /api/users/
@@ -98,9 +98,9 @@ Respuesta:
 | :----- | :----------------------- | :------------------------ |
 | `400`  | `"error": "Bad Request"` | "message": "Invalid data" |
 
-## License
+## Licencia
 
-Nest is [MIT licensed](LICENSE).
+[Licencia MIT](https://es.wikipedia.org/wiki/Licencia_MIT).
 
 ## Contacto:
 
